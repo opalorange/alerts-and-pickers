@@ -1,6 +1,6 @@
 import UIKit
 
-extension UIAlertController {
+public extension UIAlertController {
     
     /// Add a date picker
     ///
@@ -11,13 +11,13 @@ extension UIAlertController {
     ///   - maximumDate: maximum date of date picker
     ///   - action: an action for datePicker value change
     
-    func addDatePicker(mode: UIDatePickerMode, date: Date?, minimumDate: Date? = nil, maximumDate: Date? = nil, action: DatePickerViewController.Action?) {
+    public func addDatePicker(mode: UIDatePickerMode, date: Date?, minimumDate: Date? = nil, maximumDate: Date? = nil, action: DatePickerViewController.Action?) {
         let datePicker = DatePickerViewController(mode: mode, date: date, minimumDate: minimumDate, maximumDate: maximumDate, action: action)
         set(vc: datePicker, height: 217)
     }
 }
 
-final class DatePickerViewController: UIViewController {
+public final class DatePickerViewController: UIViewController {
     
     public typealias Action = (Date) -> Void
     
@@ -28,7 +28,7 @@ final class DatePickerViewController: UIViewController {
         return $0
     }(UIDatePicker())
     
-    required init(mode: UIDatePickerMode, date: Date? = nil, minimumDate: Date? = nil, maximumDate: Date? = nil, action: Action?) {
+    public required init(mode: UIDatePickerMode, date: Date? = nil, minimumDate: Date? = nil, maximumDate: Date? = nil, action: Action?) {
         super.init(nibName: nil, bundle: nil)
         datePicker.datePickerMode = mode
         datePicker.date = date ?? Date()
@@ -37,7 +37,7 @@ final class DatePickerViewController: UIViewController {
         self.action = action
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -45,7 +45,7 @@ final class DatePickerViewController: UIViewController {
         Log("has deinitialized")
     }
     
-    override func loadView() {
+    public override func loadView() {
         view = datePicker
     }
     
