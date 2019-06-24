@@ -10,53 +10,53 @@ extension UIView {
     /// Should the corner be as circle
     var circleCorner: Bool {
         get {
-            return min(bounds.size.height, bounds.size.width) / 2 == cornerRadius
+            return min(bounds.size.height, bounds.size.width) / 2 == layer.cornerRadius
         }
         set {
-            cornerRadius = newValue ? min(bounds.size.height, bounds.size.width) / 2 : cornerRadius
+            layer.cornerRadius = newValue ? min(bounds.size.height, bounds.size.width) / 2 : layer.cornerRadius
         }
     }
     
-    @IBInspectable
-    /// Corner radius of view; also inspectable from Storyboard.
-    var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = circleCorner ? min(bounds.size.height, bounds.size.width) / 2 : newValue
-                //abs(CGFloat(Int(newValue * 100)) / 100)
-        }
-    }
+//    @IBInspectable
+//    /// Corner radius of view; also inspectable from Storyboard.
+//    var cornerRadius: CGFloat {
+//        get {
+//            return layer.cornerRadius
+//        }
+//        set {
+//            layer.cornerRadius = circleCorner ? min(bounds.size.height, bounds.size.width) / 2 : newValue
+//                //abs(CGFloat(Int(newValue * 100)) / 100)
+//        }
+//    }
     
-    @IBInspectable
-    /// Border color of view; also inspectable from Storyboard.
-    var borderColor: UIColor? {
-        get {
-            guard let color = layer.borderColor else {
-                return nil
-            }
-            return UIColor(cgColor: color)
-        }
-        set {
-            guard let color = newValue else {
-                layer.borderColor = nil
-                return
-            }
-            layer.borderColor = color.cgColor
-        }
-    }
-    
-    @IBInspectable
-    /// Border width of view; also inspectable from Storyboard.
-    var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        set {
-            layer.borderWidth = newValue
-        }
-    }
+//    @IBInspectable
+//    /// Border color of view; also inspectable from Storyboard.
+//    var borderColor: UIColor? {
+//        get {
+//            guard let color = layer.borderColor else {
+//                return nil
+//            }
+//            return UIColor(cgColor: color)
+//        }
+//        set {
+//            guard let color = newValue else {
+//                layer.borderColor = nil
+//                return
+//            }
+//            layer.borderColor = color.cgColor
+//        }
+//    }
+//
+//    @IBInspectable
+//    /// Border width of view; also inspectable from Storyboard.
+//    var borderWidth: CGFloat {
+//        get {
+//            return layer.borderWidth
+//        }
+//        set {
+//            layer.borderWidth = newValue
+//        }
+//    }
     
     @IBInspectable
     /// Shadow color of view; also inspectable from Storyboard.

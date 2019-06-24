@@ -10,17 +10,17 @@ final class ItemWithPhoto: UICollectionViewCell {
     }(UIImageView())
     
     lazy var unselectedCircle: UIView = {
-        $0.backgroundColor = .clear
-        $0.borderWidth = 2
-        $0.borderColor = .white
+        $0.backgroundColor = UIColor.clear
+        $0.layer.borderWidth = 2
+        $0.layer.borderColor = UIColor.white.cgColor
         $0.maskToBounds = false
         return $0
     }(UIView())
     
     lazy var selectedCircle: UIView = {
-        $0.backgroundColor = .clear
-        $0.borderWidth = 2
-        $0.borderColor = .white
+        $0.backgroundColor = UIColor.clear
+        $0.layer.borderWidth = 2
+        $0.layer.borderColor = UIColor.white.cgColor
         $0.maskToBounds = false
         return $0
     }(UIView())
@@ -59,7 +59,7 @@ final class ItemWithPhoto: UICollectionViewCell {
     override public func layoutSubviews() {
         super.layoutSubviews()
         imageView.frame = contentView.frame
-        imageView.cornerRadius = 12
+        imageView.layer.cornerRadius = 12
         updateAppearance(forCircle: unselectedCircle)
         updateAppearance(forCircle: selectedCircle)
         updateAppearance(forPoint: selectedPoint)
@@ -80,7 +80,7 @@ final class ItemWithPhoto: UICollectionViewCell {
     }
     
     func updateAppearance(forPoint view: UIView) {
-        view.frame.size = CGSize(width: unselectedCircle.width - unselectedCircle.borderWidth * 2, height: unselectedCircle.height - unselectedCircle.borderWidth * 2)
+        view.frame.size = CGSize(width: unselectedCircle.width - unselectedCircle.layer.borderWidth * 2, height: unselectedCircle.height - unselectedCircle.layer.borderWidth * 2)
         view.center = selectedCircle.center
         view.circleCorner = true
     }

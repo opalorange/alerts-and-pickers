@@ -209,9 +209,9 @@ class ViewController: UIViewController {
                 textField.left(image: #imageLiteral(resourceName: "pen"), color: .black)
                 textField.leftViewPadding = 12
                 textField.becomeFirstResponder()
-                textField.borderWidth = 1
-                textField.cornerRadius = 8
-                textField.borderColor = UIColor.lightGray.withAlphaComponent(0.5)
+                textField.layer.borderWidth = 1
+                textField.layer.cornerRadius = 8
+                textField.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
                 textField.backgroundColor = nil
                 textField.textColor = .black
                 textField.placeholder = "Type something"
@@ -254,8 +254,8 @@ class ViewController: UIViewController {
                 textField.left(image: #imageLiteral(resourceName: "padlock"), color: UIColor(hex: 0x007AFF))
                 textField.leftViewPadding = 16
                 textField.leftTextPadding = 12
-                textField.borderWidth = 1
-                textField.borderColor = UIColor.lightGray.withAlphaComponent(0.5)
+                textField.layer.borderWidth = 1
+                textField.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
                 textField.backgroundColor = nil
                 textField.textColor = .black
                 textField.placeholder = "Password"

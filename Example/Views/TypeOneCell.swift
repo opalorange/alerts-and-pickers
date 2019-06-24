@@ -70,7 +70,7 @@ class TypeOneCell: UICollectionViewCell {
     func style(view: UIView) {
         view.maskToBounds = false
         view.backgroundColor = .white
-        view.cornerRadius = 14
+        view.layer.cornerRadius = 14
         view.shadowColor = .black
         view.shadowOffset = CGSize(width: 1, height: 5)
         view.shadowRadius = 8

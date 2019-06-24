@@ -89,7 +89,7 @@ final class LocationPickerViewController: UIViewController {
     lazy var locationButton: Button = {
         $0.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         $0.maskToBounds = true
-        $0.cornerRadius = 22
+        $0.layer.cornerRadius = 22
         $0.setImage(#imageLiteral(resourceName: "geolocation"), for: UIControl.State())
         $0.addTarget(self, action: #selector(LocationPickerViewController.currentLocationPressed),
                          for: .touchUpInside)
@@ -389,9 +389,9 @@ extension LocationPickerViewController: MKMapViewDelegate {
         }
         button.backgroundColor = UIColor(hex: 0x007AFF)
 		button.setTitleColor(.white, for: UIControl.State())
-        button.borderWidth = 2
-        button.borderColor = UIColor(hex: 0x007AFF)
-        button.cornerRadius = 5
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor(hex: 0x007AFF).cgColor
+        button.layer.cornerRadius = 5
         button.titleEdgeInsets.left = 5
         button.titleEdgeInsets.right = 5
 		return button

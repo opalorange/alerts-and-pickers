@@ -40,9 +40,9 @@ final class TwoTextFieldsViewController: UIViewController {
         textFieldView.width = view.width
         textFieldView.height = height * 2
         textFieldView.maskToBounds = true
-        textFieldView.borderWidth = 1
-        textFieldView.borderColor = UIColor.lightGray
-        textFieldView.cornerRadius = 8
+        textFieldView.layer.borderWidth = 1
+        textFieldView.layer.borderColor = UIColor.lightGray.cgColor
+        textFieldView.layer.cornerRadius = 8
         
         configurationOneFor?(textFieldOne)
         configurationTwoFor?(textFieldTwo)
