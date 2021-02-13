@@ -34,6 +34,10 @@ public final class DatePickerViewController: UIViewController {
         datePicker.date = date ?? Date()
         datePicker.minimumDate = minimumDate
         datePicker.maximumDate = maximumDate
+        
+        if #available(iOS 14.0, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
         self.action = action
     }
     
